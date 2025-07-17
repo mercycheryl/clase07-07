@@ -30,4 +30,20 @@ public class Producto {
                 ", precio=" + precio +
                 '}';
     }
+
+    public String getCodigo() {
+        return "";
+    }
+
+    public String getNombre() {
+        return "";
+    }
+
+    public double getPrecio() {
+        return 0;
+    }
+
+    public int getId() {
+        return 0;
+    }
 }

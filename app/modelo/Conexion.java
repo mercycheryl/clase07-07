@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 
 public class Conexion {
     public Connection conectar(){
-        String url="jdbc:sqlite:"+new File("test.db").getAbsolutePath();
+        String url="jdbc:sqlite:"+new File("C:\\Users\\POO\\Downloads\\prod.db").getAbsolutePath();
         Connection conn=null;
 
         try{
