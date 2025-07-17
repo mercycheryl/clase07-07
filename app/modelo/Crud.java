@@ -2,7 +2,7 @@ package app.modelo;
 
 import java.util.Map;
 
-public interface CRUD {
+public interface Crud {
     // mostrar todos
     public Map<Integer, Producto>
     seleccionarTodo();
