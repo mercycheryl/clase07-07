@@ -32,18 +32,18 @@ public class Producto {
     }
 
     public String getCodigo() {
-        return "";
+        return codigo;
     }
 
     public String getNombre() {
-        return "";
+        return nombre;
     }
 
     public double getPrecio() {
-        return 0;
+        return precio;
     }
 
     public int getId() {
-        return 0;
+        return id;
     }
 }

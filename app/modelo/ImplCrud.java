@@ -116,15 +116,13 @@ public class ImplCrud implements Crud{
                 );
                 System.out.println(producto);
             }
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return producto;
     }
 
-
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
             // para vulnerar el sistema ::::::::::::::::::::::::::::::::::::::::::::::::::::::
         ImplCrud c = new ImplCrud();
@@ -133,9 +131,7 @@ public class ImplCrud implements Crud{
         String codigo=JOptionPane.showInputDialog(null,"Ingrese codigo del producot: ");
         c.seleccionarProdNOSEGURO(id,codigo);
         // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-    }
+    }*/
 }
 
 

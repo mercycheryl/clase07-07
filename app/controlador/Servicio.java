@@ -10,7 +10,7 @@ import java.util.Map;
 public class Servicio {
     private Crud implementacion =new ImplCrud();
 
-    public static Map<Integer,Producto> seleccionarTodo(){
+    public Map<Integer,Producto> seleccionarTodo(){
         return implementacion.seleccionarTodo();
     }
     public void insertar(Producto producto){
