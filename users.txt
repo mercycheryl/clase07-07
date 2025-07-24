@@ -1,5 +1,5 @@
-admin;admin
-ameri;123
-johanna;012
-mercy;111
-alex;222
+admin;admin;administrador
+ameri;123;estandar
+johanna;012;estandar
+mercy;111;estandar
+alex;222;estandar
