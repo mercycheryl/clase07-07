@@ -66,8 +66,8 @@
         </constraints>
         <properties>
           <model>
-            <item value="Administrador"/>
-            <item value="Estandar"/>
+            <item value="administrador"/>
+            <item value="estandar"/>
           </model>
         </properties>
       </component>

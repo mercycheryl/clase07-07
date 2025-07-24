@@ -27,7 +27,8 @@ public class Login extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String user=textField1.getText().trim();
                 String password=passwordField1.getText().trim();
-                if (verificarCredenciales(user, password)) {
+                String perfil=(String) comboBox1.getSelectedItem();
+                if (verificarCredenciales(user, password, perfil)) {
                     Ventana ventana = new Ventana(user);
                     ventana.setVisible(true);
                     setVisible(false);
@@ -38,9 +39,16 @@ public class Login extends JFrame {
                 passwordField1.setText("");
             }
         });
+        comboBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                comboBox1.addItem("administrador");
+                comboBox1.addItem("estandar");
+            }
+        });
     }
 
-    private boolean verificarCredenciales(String usuario, String contrasena) {
+    private boolean verificarCredenciales(String usuario, String contrasena, String perfil) {
         try {
             BufferedReader br = new BufferedReader(new FileReader
                     ("C:\\Users\\POO\\IdeaProjects\\CRUD\\src\\app\\modelo\\users.txt"));
@@ -48,24 +56,22 @@ public class Login extends JFrame {
             //JOptionPane.showMessageDialog(null,"Exito al leer el archivo");
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(";");
-                if (partes.length == 2) {
+                if (partes.length == 3) {
                     String user = partes[0];
                     String pass = partes[1];
-                    if (usuario.equals(user) && contrasena.equals(pass)) {
+                    String per = partes [2];
+                    if (usuario.equals(user) && contrasena.equals(pass) && perfil.equals(per)) {
                         br.close();
                         return true;
                     }
                 }
             }
-
             br.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error ");
         }
         return false;
     }
-
-
 
     public static void main(String[] args){
         SwingUtilities.invokeLater(()->{
