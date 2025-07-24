@@ -24,6 +24,8 @@ public class Ventana extends JFrame {
     private JButton imprimirReporteButton;
     private DefaultTableModel model;
     private JScrollPane scrollPane=null;
+    private JButton btnCerrarSesion;
+    private JLabel lblWelcome;
 
     // tabla
     private Object[] columns={"Id","Codigo","Producto","Precio"};
@@ -33,7 +35,7 @@ public class Ventana extends JFrame {
     private Servicio controlador=new Servicio();
     // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-    public Ventana() {
+    public Ventana(String nombreUsuario) {
         setTitle("Venta");
         setSize(500, 300);
 
@@ -41,13 +43,15 @@ public class Ventana extends JFrame {
         setContentPane(jpanel1);
         setLocationRelativeTo(null);
         obtenerRegistrosTabla();
+
+        lblWelcome.setText("Bienvenido, " + nombreUsuario);
+
         btnNuevo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 agregarProductos();
             }
         });
-
         //tabla
         tbProd.addMouseListener(new MouseAdapter() {
             @Override
@@ -106,11 +110,19 @@ public class Ventana extends JFrame {
                 }
             }
         });
+        btnCerrarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Login login=new Login();
+                login.setVisible(true);
+                setVisible(false);
+            }
+        });
     }
 
     public static void main(String[] args){
         SwingUtilities.invokeLater(()->{
-            new Ventana().setVisible(true);
+            new Ventana("").setVisible(true);
         });
     }
 
